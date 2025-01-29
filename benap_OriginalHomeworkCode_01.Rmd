@@ -65,4 +65,29 @@ tesseract[2, 3, 2, ]
 ```{r}
 tesseract[1:5, 1:5, 3, 3]
 ```
+## Challenge 4
+
+```{r}
+#Strepsirhini
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+
+#Haplorhini
+Tarsioidea <- c("Tarsiidae")
+
+Catarrhini <- c("Hominidae","Hylobatidae","Cercopithecidae")
+Platyrrhini <- c("Pitheciidae","Atelidae","Cebidae")
+Anthropoidea <- list(Catarrhini, Platyrrhini)
+names(Anthropoidea) <- list("Catarrhini","Platyrrhini")
+
+Haplorhini <- list(Tarsioidea, Anthropoidea)
+names(Haplorhini) <- list("Tarsioidea","Anthropoidea")
+
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates
+```
 
