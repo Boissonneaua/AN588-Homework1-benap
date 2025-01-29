@@ -19,9 +19,33 @@ library(stringr)
 ## Challenge 1
 
 ```{r}
-ulysses1 <- "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed."
+barnacle <- "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed." #input string
+barnacle_vector <- str_split(barnacle," ") #convert string barnacle to a vector of individual words
+barnacle_vector[[1]][c(3,6,9,12,15,18,21)] #select every 3rd word from barnacle vector
+```
+
+## Challenge 2
+
+```{r}
+#create matrix m from the hw
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
 ```
 ```{r}
-str_split(ulysses1," ")
+# extract the 2nd, 3rd, and 6th columns and assign them to the variable x
+x <- m[ ,c(2,3,6)]
+x
 ```
+```{r}
+# extract the 6th to 8th row and assign them to the variable x
+x <- m[c(6:8), ]
+x
+```
+
+```{r}
+# extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+x <- m[c(2:6),c(2:9)]
+x
+```
+
 
