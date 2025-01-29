@@ -48,4 +48,21 @@ x <- m[c(2:6),c(2:9)]
 x
 ```
 
+## Challenge 3
+
+```{r}
+# Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+tesseract <- array(400:1, dim = c(5,5,4,4))
+```
+
+```{r}
+# Given this matrix, what would the following return?
+tesseract[1, 1, 1, 2]
+```
+```{r}
+tesseract[2, 3, 2, ]
+```
+```{r}
+tesseract[1:5, 1:5, 3, 3]
+```
 
