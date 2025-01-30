@@ -24,39 +24,46 @@ barnacle_vector <- str_split(barnacle," ") #convert string barnacle to a vector 
 barnacle_vector[[1]][c(3,6,9,12,15,18,21)] #select every 3rd word from barnacle vector
 ```
 
+***
+
 ## Challenge 2
 
 ```{r}
-#create matrix m from the hw
+# create matrix m from the hw
 m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
 m
 ```
+
+extract the 2nd, 3rd, and 6th columns and assign them to the variable x
 ```{r}
-# extract the 2nd, 3rd, and 6th columns and assign them to the variable x
 x <- m[ ,c(2,3,6)]
 x
 ```
+
+extract the 6th to 8th row and assign them to the variable x
 ```{r}
-# extract the 6th to 8th row and assign them to the variable x
 x <- m[c(6:8), ]
 x
 ```
 
+extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
 ```{r}
-# extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
 x <- m[c(2:6),c(2:9)]
 x
 ```
 
+***
+
 ## Challenge 3
 
+Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
 ```{r}
-# Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
 tesseract <- array(400:1, dim = c(5,5,4,4))
 ```
 
+
+Given this matrix, what would the following return?
 ```{r}
-# Given this matrix, what would the following return?
 tesseract[1, 1, 1, 2]
 ```
 ```{r}
@@ -65,6 +72,9 @@ tesseract[2, 3, 2, ]
 ```{r}
 tesseract[1:5, 1:5, 3, 3]
 ```
+
+***
+
 ## Challenge 4
 
 ```{r}
@@ -91,34 +101,44 @@ names(Primates) <- list("Haplorhini", "Strepsirhini")
 Primates
 ```
 
+***
+
 ## Challenge 5
+
+Store the following numbers as a 5 x 3 matrix, called “m3”: 3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2. Be sure to fill the matrix ROW-WISE.
+
 ```{r}
-# Store the following numbers as a 5 x 3 matrix, called “m3”: 3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2. Be sure to fill the matrix ROW-WISE.
 m3_data <- c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2) # could also define data in the matrix function itself, but for clarity thought I'd do it here instead
 m3 <- matrix(data = m3_data, nrow = 5, ncol = 3, byrow = TRUE) # byrow ensures the matrix is filled in row-wise instead of column-wise
 m3
 ```
 
+Coerce the matrix to a data frame.
+
 ```{r}
-# Coerce the matrix to a data frame.
 m3_df <- as.data.frame(m3, row.names = c(1,2,3,4,5)) #as.data.frame is a base R function that converts an input (here m3) to a dataframe, row names are specified within the function by the row.names bit
 colnames(m3_df) <- c("first","second","third") #rename columns in m3_df so they're not just "V1," "V2," etc.
 m3_df
 ```
 
+As a data frame, coerce the second column to be logical-valued
+
 ```{r}
-# As a data frame, coerce the second column to be logical-valued
 m3_df$second <- as.logical(m3_df$second) #simple use of the as.logical function, using the $ operator to specify the column we're changing
 m3_df
 ```
+
+As a data frame, coerce the third column to be factor-valued
+
+
 ```{r}
-# As a data frame, coerce the third column to be factor-valued
 m3_df$third <- as.factor(m3_df$third)
 m3_df
 ```
-```{r}
-# When you are done, use the str() command to show the data type for each variable in your dataframe.
 
+When you are done, use the str() command to show the data type for each variable in your dataframe.
+
+```{r}
 str(m3_df)
 ```
 
