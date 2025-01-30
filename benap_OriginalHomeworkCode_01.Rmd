@@ -91,3 +91,34 @@ names(Primates) <- list("Haplorhini", "Strepsirhini")
 Primates
 ```
 
+## Challenge 5
+```{r}
+# Store the following numbers as a 5 x 3 matrix, called “m3”: 3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2. Be sure to fill the matrix ROW-WISE.
+m3_data <- c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2) # could also define data in the matrix function itself, but for clarity thought I'd do it here instead
+m3 <- matrix(data = m3_data, nrow = 5, ncol = 3, byrow = TRUE) # byrow ensures the matrix is filled in row-wise instead of column-wise
+m3
+```
+
+```{r}
+# Coerce the matrix to a data frame.
+m3_df <- as.data.frame(m3, row.names = c(1,2,3,4,5)) #as.data.frame is a base R function that converts an input (here m3) to a dataframe, row names are specified within the function by the row.names bit
+colnames(m3_df) <- c("first","second","third") #rename columns in m3_df so they're not just "V1," "V2," etc.
+m3_df
+```
+
+```{r}
+# As a data frame, coerce the second column to be logical-valued
+m3_df$second <- as.logical(m3_df$second) #simple use of the as.logical function, using the $ operator to specify the column we're changing
+m3_df
+```
+```{r}
+# As a data frame, coerce the third column to be factor-valued
+m3_df$third <- as.factor(m3_df$third)
+m3_df
+```
+```{r}
+# When you are done, use the str() command to show the data type for each variable in your dataframe.
+
+str(m3_df)
+```
+
